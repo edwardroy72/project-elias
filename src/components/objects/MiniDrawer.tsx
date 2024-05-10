@@ -81,6 +81,8 @@ export default function MiniDrawer() {
     fontWeight: "bold",
   };
 
+  const buttonStyle = { color: "white" };
+
   // Functions
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -89,11 +91,23 @@ export default function MiniDrawer() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-
-      <Drawer variant="permanent" open={open}>
+      <Drawer
+        variant="permanent"
+        PaperProps={{
+          sx: {
+            backgroundColor: "#111111",
+            color: "white",
+          },
+        }}
+        open={open}
+      >
         <DrawerHeader>
           <IconButton onClick={handleDrawerToggle}>
-            {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {open ? (
+              <ChevronLeftIcon style={buttonStyle} />
+            ) : (
+              <ChevronRightIcon style={buttonStyle} />
+            )}
           </IconButton>
         </DrawerHeader>
         <List>
@@ -113,14 +127,18 @@ export default function MiniDrawer() {
                     justifyContent: "center",
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {index % 2 === 0 ? (
+                    <InboxIcon style={buttonStyle} />
+                  ) : (
+                    <MailIcon style={buttonStyle} />
+                  )}
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
-        <Divider sx={{ mx: open ? "20px" : "10px", color: "gray" }} />
+        <Divider sx={{ mx: open ? "20px" : "10px", bgcolor: "white" }} />
         <Typography sx={pinnedTreesHeadingStyle}>
           <img
             src={PinIcon}
@@ -146,14 +164,18 @@ export default function MiniDrawer() {
                     justifyContent: "center",
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {index % 2 === 0 ? (
+                    <InboxIcon style={buttonStyle} />
+                  ) : (
+                    <MailIcon style={buttonStyle} />
+                  )}
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
-        <Divider sx={{ mx: open ? "20px" : "10px", color: "gray" }} />
+        <Divider sx={{ mx: open ? "20px" : "10px", bgcolor: "white" }} />
         <Typography sx={pinnedTreesHeadingStyle}>Recent Trees</Typography>
         <List>
           {["Life", "University", "Social"].map((text, index) => (
@@ -172,7 +194,11 @@ export default function MiniDrawer() {
                     justifyContent: "center",
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {index % 2 === 0 ? (
+                    <InboxIcon style={buttonStyle} />
+                  ) : (
+                    <MailIcon style={buttonStyle} />
+                  )}
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
