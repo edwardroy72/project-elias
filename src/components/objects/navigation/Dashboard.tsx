@@ -351,7 +351,6 @@ export default function Dashboard(props: DashboardProps) {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-      {/* --------------------------------------------------------------- */}
       <Drawer
         variant="permanent"
         PaperProps={{
@@ -382,7 +381,7 @@ export default function Dashboard(props: DashboardProps) {
                   minHeight: 36,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
-                  py: 0
+                  py: 0,
                 }}
               >
                 <ListItemIcon
@@ -425,7 +424,7 @@ export default function Dashboard(props: DashboardProps) {
                   minHeight: 36,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
-                  py: 0
+                  py: 0,
                 }}
               >
                 <ListItemIcon
@@ -463,7 +462,7 @@ export default function Dashboard(props: DashboardProps) {
                   minHeight: 36,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
-                  py: 0
+                  py: 0,
                 }}
               >
                 <ListItemIcon
@@ -501,8 +500,6 @@ export default function Dashboard(props: DashboardProps) {
           />
         </Box>
       </Drawer>
-      {/* --------------------------------------------------------------- */}
-
       <Box
         component="main"
         sx={{
