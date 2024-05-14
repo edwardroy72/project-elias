@@ -207,7 +207,7 @@ export default function Navbar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            project.elias
           </Typography>
           <Search>
             <SearchIconWrapper>
