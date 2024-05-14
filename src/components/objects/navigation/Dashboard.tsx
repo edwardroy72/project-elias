@@ -379,9 +379,10 @@ export default function Dashboard(props: DashboardProps) {
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
-                  minHeight: 48,
+                  minHeight: 36,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
+                  py: 0
                 }}
               >
                 <ListItemIcon
@@ -421,9 +422,10 @@ export default function Dashboard(props: DashboardProps) {
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
-                  minHeight: 48,
+                  minHeight: 36,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
+                  py: 0
                 }}
               >
                 <ListItemIcon
@@ -458,9 +460,10 @@ export default function Dashboard(props: DashboardProps) {
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
-                  minHeight: 48,
+                  minHeight: 36,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
+                  py: 0
                 }}
               >
                 <ListItemIcon
