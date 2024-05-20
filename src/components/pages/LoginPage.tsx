@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import ErrorMessage from "../objects/ui/ErrorMessage";
 import PasswordInput from "../objects/ui/PasswordInput";
 import LoginButton from "../objects/ui/LoginButton";
+import PageTemplate from "../objects/ui/PageTemplate";
 
 interface LoginProps {
   token: string;
@@ -59,16 +60,7 @@ const LoginPage = (props: LoginProps) => {
   const inputStyle = { width: "50%", mb: "16px" };
 
   return (
-    <Box
-      component="main"
-      sx={{
-        flexGrow: 1,
-        height: "100vh",
-        overflow: "auto",
-        py: "10px",
-        px: "1.5%",
-      }}
-    >
+    <PageTemplate>
       {error.errorFound && <ErrorMessage error={error} setError={setError} />}
       <h1>Login Page</h1>
       <TextField
@@ -100,7 +92,7 @@ const LoginPage = (props: LoginProps) => {
       >
         Create Account
       </Button>
-    </Box>
+    </PageTemplate>
   );
 };
 

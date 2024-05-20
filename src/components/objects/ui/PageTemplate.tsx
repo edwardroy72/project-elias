@@ -14,7 +14,8 @@ const PageTemplate = ({ children }: PageTemplateProps) => {
         height: "100vh",
         overflow: "auto",
         py: "10px",
-        px: "1.5%",
+        px: "5%",
+        mt: "70px",
       }}
     >
       {children}
