@@ -23,9 +23,9 @@ const AppPages = () => {
 
   return (
     <>
-      <DashboardPage />
       <Routes>
-        <Route path="/" element={<div />} />
+        <Route index element={<DashboardPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
         <Route
           path="/login"
           element={

@@ -59,48 +59,48 @@ const LoginPage = (props: LoginProps) => {
   const inputStyle = { width: "50%", mb: "16px" };
 
   return (
-    <Paper sx={{ height: "100%" }} elevation={2}>
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        minHeight="50dvh"
-        flexDirection="column"
-        gap={1}
+    <Box
+      component="main"
+      sx={{
+        flexGrow: 1,
+        height: "100vh",
+        overflow: "auto",
+        py: "10px",
+        px: "1.5%",
+      }}
+    >
+      {error.errorFound && <ErrorMessage error={error} setError={setError} />}
+      <h1>Login Page</h1>
+      <TextField
+        id="register-email"
+        label="Email"
+        variant="outlined"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        sx={inputStyle}
+      />
+      <PasswordInput
+        sx={inputStyle}
+        onChange={(e) => setPassword(e.target.value)}
+        label="Password"
+      />
+      <LoginButton onClick={login} />
+      <h2 style={{ fontSize: "12px", marginTop: "60px" }}>
+        Not registered yet?
+      </h2>
+      <Button
+        variant="contained"
+        onClick={() => navigate("/register")}
+        sx={{
+          width: "24%",
+          height: "40px",
+          bgcolor: "#40a162",
+          paddingTop: "10px",
+        }}
       >
-        {error.errorFound && <ErrorMessage error={error} setError={setError} />}
-        <h1>Login Page</h1>
-        <TextField
-          id="register-email"
-          label="Email"
-          variant="outlined"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          sx={inputStyle}
-        />
-        <PasswordInput
-          sx={inputStyle}
-          onChange={(e) => setPassword(e.target.value)}
-          label="Password"
-        />
-        <LoginButton onClick={login} />
-        <h2 style={{ fontSize: "12px", marginTop: "60px" }}>
-          Not registered yet?
-        </h2>
-        <Button
-          variant="contained"
-          onClick={() => navigate("/register")}
-          sx={{
-            width: "24%",
-            height: "40px",
-            bgcolor: "#40a162",
-            paddingTop: "10px",
-          }}
-        >
-          Create Account
-        </Button>
-      </Box>
-    </Paper>
+        Create Account
+      </Button>
+    </Box>
   );
 };
 

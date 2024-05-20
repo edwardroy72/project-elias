@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import AppPages from "./components/pages/AppPages";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
@@ -7,12 +7,11 @@ import Navbar from "./components/objects/navigation/Navbar";
 import Sidebar from "./components/objects/navigation/Sidebar";
 import { NavigationSettings } from "./types";
 
-export const NavigationSettingsContext =
-  React.createContext<NavigationSettings>({
-    drawerWidth: 240,
-    open: false,
-    setOpen: () => {},
-  });
+export const NavigationContext = React.createContext<NavigationSettings>({
+  drawerWidth: 240,
+  open: false,
+  setOpen: () => {},
+});
 
 export default function App() {
   const [darkMode, setDarkMode] = React.useState(true);
@@ -24,15 +23,14 @@ export default function App() {
     <ThemeProvider theme={ThemeOptions(darkMode)}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <NavigationSettingsContext.Provider
-          value={{ drawerWidth, open, setOpen }}
-        >
+        <NavigationContext.Provider value={{ drawerWidth, open, setOpen }}>
           <Navbar />
           <Sidebar setDarkMode={setDarkMode} />
-        </NavigationSettingsContext.Provider>
-        <Router>
+        </NavigationContext.Provider>
+
+        <BrowserRouter>
           <AppPages />
-        </Router>
+        </BrowserRouter>
       </Box>
     </ThemeProvider>
   );

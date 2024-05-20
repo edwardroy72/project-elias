@@ -17,7 +17,7 @@ import Switch from "@mui/material/Switch";
 import { CSSObject, styled, Theme } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import { DrawerProps, SidebarProps } from "../../../types";
-import { NavigationSettingsContext } from "../../../App";
+import { NavigationContext } from "../../../App";
 
 const openedMixin = (theme: Theme, drawerWidth: number): CSSObject => ({
   width: drawerWidth,
@@ -69,9 +69,7 @@ const pinnedTreesHeadingStyle = {
 };
 
 export default function Sidebar(props: SidebarProps) {
-  const { drawerWidth, open, setOpen } = React.useContext(
-    NavigationSettingsContext
-  );
+  const { drawerWidth, open, setOpen } = React.useContext(NavigationContext);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -82,7 +80,7 @@ export default function Sidebar(props: SidebarProps) {
       variant="permanent"
       PaperProps={{
         sx: {
-          backgroundColor: "#111111",
+          backgroundColor: "#282828",
           color: "white",
         },
       }}
