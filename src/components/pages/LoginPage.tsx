@@ -57,41 +57,58 @@ const LoginPage = (props: LoginProps) => {
     }
   };
 
-  const inputStyle = { width: "50%", mb: "16px" };
+  const inputStyle = { width: "88%", mb: "16px" };
 
   return (
     <PageTemplate>
-      {error.errorFound && <ErrorMessage error={error} setError={setError} />}
-      <h1>Login Page</h1>
-      <TextField
-        id="register-email"
-        label="Email"
-        variant="outlined"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        sx={inputStyle}
-      />
-      <PasswordInput
-        sx={inputStyle}
-        onChange={(e) => setPassword(e.target.value)}
-        label="Password"
-      />
-      <LoginButton onClick={login} />
-      <h2 style={{ fontSize: "12px", marginTop: "60px" }}>
-        Not registered yet?
-      </h2>
-      <Button
-        variant="contained"
-        onClick={() => navigate("/register")}
+      <Box
         sx={{
-          width: "24%",
-          height: "40px",
-          bgcolor: "#40a162",
-          paddingTop: "10px",
+          gridColumn: "span 12",
+          display: "flex",
+          alignItems: "center",
+          alignContent: "center",
+          flexDirection: "column",
+          width: "30vw",
+          height: "60vh",
+          mt: "10%",
+          outline: "solid #333333 2px",
+          borderRadius: "16px",
+          backgroundColor: "#333333",
         }}
       >
-        Create Account
-      </Button>
+        {error.errorFound && <ErrorMessage error={error} setError={setError} />}
+        <h1>Login Page</h1>
+        <TextField
+          id="register-email"
+          label="Email"
+          variant="outlined"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          sx={inputStyle}
+        />
+        <PasswordInput
+          sx={inputStyle}
+          onChange={(e) => setPassword(e.target.value)}
+          label="Password"
+        />
+        <LoginButton onClick={login} />
+        <h2 style={{ fontSize: "12px", marginTop: "60px" }}>
+          Not registered yet?
+        </h2>
+        <Button
+          variant="contained"
+          onClick={() => navigate("/register")}
+          sx={{
+            width: "40%",
+            height: "40px",
+            bgcolor: "#40a162",
+            paddingTop: "8px",
+            fontSize: "12px",
+          }}
+        >
+          Create Account
+        </Button>
+      </Box>
     </PageTemplate>
   );
 };

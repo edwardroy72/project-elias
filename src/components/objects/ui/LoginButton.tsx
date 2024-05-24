@@ -5,7 +5,7 @@ const LoginButton = ({ onClick }) => {
   return (
     <Button
       variant="contained"
-      sx={{ width: "25%", height: "40px" }}
+      sx={{ width: "40%", height: "40px", mt: '30px' }}
       onClick={onClick}
     >
       Login
