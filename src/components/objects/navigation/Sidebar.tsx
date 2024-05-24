@@ -95,9 +95,9 @@ export default function Sidebar(props: SidebarProps) {
           px: [1],
         }}
       >
-        <IconButton onClick={toggleDrawer}>
+        {open && <IconButton onClick={toggleDrawer}>
           <ChevronLeftIcon />
-        </IconButton>
+        </IconButton>}
       </Toolbar>
       <List>
         {["Tree View", "Actions"].map((text, index) => (

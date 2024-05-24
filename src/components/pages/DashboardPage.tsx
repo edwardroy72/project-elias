@@ -19,8 +19,10 @@ const DashboardPage = () => {
       <Box
         sx={{
           gridColumn: "span 12",
-          width: "70vw",
+          width: "80vw",
           height: "0px",
+          mx: "auto",
+          px: "0",
         }}
       >
         <Toolbar />

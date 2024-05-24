@@ -39,14 +39,6 @@ const AppPages = () => {
           }
         />
       </Routes>
-      <Button
-        onClick={() => {
-          navigate("/login");
-          setSelectedPage(selectedPage);
-        }}
-      >
-        Login
-      </Button>
     </>
   );
 };

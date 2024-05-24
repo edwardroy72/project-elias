@@ -13,15 +13,3 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 window.ipcRenderer.on("main-process-message", (_event, message) => {
   console.log(message);
 });
-
-const { app, BrowserWindow, globalShortcut } = require("electron");
-
-app.on("ready", () => {
-  const mainWindow = new BrowserWindow();
-  mainWindow.loadURL("yourappurl");
-
-  // Open developer tools
-  globalShortcut.register("CommandOrControl+Shift+I", () => {
-    mainWindow.webContents.openDevTools();
-  });
-});

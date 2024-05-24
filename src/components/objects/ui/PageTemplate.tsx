@@ -12,13 +12,13 @@ const PageTemplate = ({ children }: PageTemplateProps) => {
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(12, 1fr)",
-        gap: "10px",
+        gap: "5px",
         height: "100vh",
-        overflow: "auto",
+        width: "100dvw",
+        overflow: "hidden",
         py: "10px",
-        px: "3%",
+        pr: "80px",
         mt: "70px",
-        mx: 'auto'
       }}
     >
       {children}

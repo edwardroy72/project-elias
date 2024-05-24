@@ -6,6 +6,8 @@ import ThemeOptions from "../styles/ThemeOptions";
 import Navbar from "./objects/navigation/Navbar";
 import Sidebar from "./objects/navigation/Sidebar";
 import { NavigationSettings } from "../types";
+import "../styles/App.scss";
+
 
 export const NavigationContext = React.createContext<NavigationSettings>({
   drawerWidth: 240,
