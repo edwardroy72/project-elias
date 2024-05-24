@@ -1,6 +1,5 @@
-import { TextField, Button, Box, Paper } from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
 import React from "react";
-import { apiCallPost } from "../../helpers";
 import { useNavigate } from "react-router-dom";
 import ErrorMessage from "../objects/ui/ErrorMessage";
 import PasswordInput from "../objects/ui/PasswordInput";
@@ -33,28 +32,8 @@ const LoginPage = (props: LoginProps) => {
     }
   }, [props.token, props.userEmail]);
 
-  const login = async () => {
-    const data = await apiCallPost(
-      "user/auth/login",
-      {
-        email: email,
-        password: password,
-      },
-      null
-    );
-
-    if (data.error) {
-      setError({
-        errorFound: true,
-        errorMsg: data.error,
-      });
-    } else {
-      localStorage.setItem("token", data.token);
-      props.setToken(data.token);
-      localStorage.setItem("userEmail", email);
-      props.setUserEmail(email);
-      navigate("/hostedlistings");
-    }
+  const login = () => {
+    return { response: "Logged in!" };
   };
 
   const inputStyle = { width: "88%", mb: "16px" };

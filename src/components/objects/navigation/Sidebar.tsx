@@ -17,7 +17,7 @@ import Switch from "@mui/material/Switch";
 import { CSSObject, styled, Theme } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import { DrawerProps, SidebarProps } from "../../../types";
-import { NavigationContext } from "../../../App";
+import { NavigationContext } from "../../App";
 
 const openedMixin = (theme: Theme, drawerWidth: number): CSSObject => ({
   width: drawerWidth,

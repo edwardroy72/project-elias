@@ -16,7 +16,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import InputBase from "@mui/material/InputBase";
 import { AppbarProps } from "../../../types";
-import { NavigationContext } from "../../../App";
+import { NavigationContext } from "../../App";
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open" && prop !== "drawerWidth",
@@ -81,9 +81,7 @@ const displaySettings = (open: boolean) => {
 };
 
 export default function Navbar() {
-  const { drawerWidth, open, setOpen } = React.useContext(
-    NavigationContext
-  );
+  const { drawerWidth, open, setOpen } = React.useContext(NavigationContext);
 
   const toggleDrawer = () => {
     setOpen(!open);
