@@ -18,6 +18,7 @@ import { CSSObject, styled, Theme } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import { DrawerProps, SidebarProps } from "../../../types";
 import { NavigationContext } from "../../App";
+import SidebarList from "./SidebarList";
 
 const openedMixin = (theme: Theme, drawerWidth: number): CSSObject => ({
   width: drawerWidth,
@@ -57,17 +58,6 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-const displaySettings = (open: boolean) => {
-  return open ? "block" : "none";
-};
-
-const buttonStyle = { color: "white" };
-
-const pinnedTreesHeadingStyle = {
-  textAlign: "center",
-  fontWeight: "bold",
-};
-
 export default function Sidebar(props: SidebarProps) {
   const { drawerWidth, open, setOpen } = React.useContext(NavigationContext);
 
@@ -95,119 +85,22 @@ export default function Sidebar(props: SidebarProps) {
           px: [1],
         }}
       >
-        {open && <IconButton onClick={toggleDrawer}>
-          <ChevronLeftIcon />
-        </IconButton>}
+        {open && (
+          <IconButton onClick={toggleDrawer}>
+            <ChevronLeftIcon />
+          </IconButton>
+        )}
       </Toolbar>
-      <List>
-        {["Tree View", "Actions"].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-              sx={{
-                minHeight: 36,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-                py: 0,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              >
-                {index % 2 === 0 ? (
-                  <InboxIcon style={buttonStyle} />
-                ) : (
-                  <MailIcon style={buttonStyle} />
-                )}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+
+      <SidebarList open={open} heading="Main" />
+      <SidebarList open={open} heading="Pinned Trees" />
+      <SidebarList open={open} heading="Recent Trees" />
+
       <Divider
-        sx={{ mx: open ? "20px" : "10px", bgcolor: "white", my: "5px" }}
-      />
-      <Typography sx={pinnedTreesHeadingStyle} display={displaySettings(open)}>
-        <img
-          src={PinIcon}
-          alt="Pin Icon"
-          style={{ width: "24px", height: "24px", filter: "invert(10 0%)" }}
-        />
-        Pinned Trees
-      </Typography>
-      <List>
-        {["Life", "University", "Social"].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-              sx={{
-                minHeight: 36,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-                py: 0,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              >
-                {index % 2 === 0 ? (
-                  <InboxIcon style={buttonStyle} />
-                ) : (
-                  <MailIcon style={buttonStyle} />
-                )}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider
-        sx={{ mx: open ? "20px" : "10px", bgcolor: "white", my: "5px" }}
-      />
-      <Typography sx={pinnedTreesHeadingStyle} display={displaySettings(open)}>
-        Recent Trees
-      </Typography>
-      <List>
-        {["Life", "University", "Social"].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-              sx={{
-                minHeight: 36,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-                py: 0,
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              >
-                {index % 2 === 0 ? (
-                  <InboxIcon style={buttonStyle} />
-                ) : (
-                  <MailIcon style={buttonStyle} />
-                )}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider
-        sx={{ mx: open ? "20px" : "10px", bgcolor: "white", my: "5px" }}
+        sx={{ mx: open ? "20px" : "10px", bgcolor: "white", my: "10px" }}
       />
       <Box id="dark-mode-selection" sx={{ mx: "auto", mt: "10px" }}>
-        <Typography display={displaySettings(open)}>Night Mode</Typography>
+        <Typography display={open ? "block" : "none"}>Night Mode</Typography>
         <Switch
           aria-label="Toggle Dark Mode"
           defaultChecked
