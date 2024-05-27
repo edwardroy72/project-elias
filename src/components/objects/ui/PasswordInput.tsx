@@ -23,7 +23,7 @@ const PasswordInput = (props: PasswordProps) => {
     setShowPassword((showPassword) => !showPassword);
 
   return (
-    <FormControl sx={{ ...sx, m: 1 }}>
+    <FormControl sx={{ ...sx }}>
       <InputLabel htmlFor={label}>{label}</InputLabel>
       <OutlinedInput
         id={label}

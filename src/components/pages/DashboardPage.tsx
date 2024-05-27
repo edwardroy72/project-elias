@@ -16,24 +16,34 @@ const DashboardPage = () => {
 
   return (
     <PageTemplate>
-      <Toolbar />
-      <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
-        <Grid container spacing={3}>
-          {/* Chart */}
-          <Grid item xs={12} md={8} lg={9}>
-            <Paper sx={sectionStyle}> </Paper>
+      <Box
+        sx={{
+          gridColumn: "span 12",
+          width: "80vw",
+          height: "0px",
+          mx: "auto",
+          px: "0",
+        }}
+      >
+        <Toolbar />
+        <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
+          <Grid container spacing={3}>
+            {/* Chart */}
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper sx={sectionStyle}> </Paper>
+            </Grid>
+            {/* Recent Deposits */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper sx={sectionStyle}> </Paper>
+            </Grid>
+            {/* Recent Orders */}
+            <Grid item xs={12}>
+              <Paper sx={sectionStyle}> </Paper>
+            </Grid>
           </Grid>
-          {/* Recent Deposits */}
-          <Grid item xs={12} md={4} lg={3}>
-            <Paper sx={sectionStyle}> </Paper>
-          </Grid>
-          {/* Recent Orders */}
-          <Grid item xs={12}>
-            <Paper sx={sectionStyle}> </Paper>
-          </Grid>
-        </Grid>
-        <Copyright />
-      </Container>
+          <Copyright />
+        </Container>
+      </Box>
     </PageTemplate>
   );
 };

@@ -1,11 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
-import AppPages from "./components/pages/AppPages";
+import AppPages from "./pages/AppPages";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
-import ThemeOptions from "./styles/ThemeOptions";
-import Navbar from "./components/objects/navigation/Navbar";
-import Sidebar from "./components/objects/navigation/Sidebar";
-import { NavigationSettings } from "./types";
+import ThemeOptions from "../styles/ThemeOptions";
+import Navbar from "./objects/navigation/Navbar";
+import Sidebar from "./objects/navigation/Sidebar";
+import { NavigationSettings } from "../types";
+import "../styles/App.scss";
+
 
 export const NavigationContext = React.createContext<NavigationSettings>({
   drawerWidth: 240,

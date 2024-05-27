@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import LoginPage from "./LoginPage";
 import React from "react";
 import DashboardPage from "./DashboardPage";
+import Button from "@mui/material/Button";
 
 const AppPages = () => {
   const navigate = useNavigate();

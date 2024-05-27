@@ -10,11 +10,15 @@ const PageTemplate = ({ children }: PageTemplateProps) => {
     <Box
       component="main"
       sx={{
-        flexGrow: 1,
+        display: "grid",
+        gridTemplateColumns: "repeat(12, 1fr)",
+        gap: "5px",
         height: "100vh",
-        overflow: "auto",
+        width: "100dvw",
+        overflow: "hidden",
         py: "10px",
-        px: "1.5%",
+        pr: "80px",
+        mt: "70px",
       }}
     >
       {children}
