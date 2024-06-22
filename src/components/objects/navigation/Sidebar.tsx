@@ -68,12 +68,6 @@ export default function Sidebar(props: SidebarProps) {
   return (
     <Drawer
       variant="permanent"
-      PaperProps={{
-        sx: {
-          backgroundColor: "#282828",
-          color: "white",
-        },
-      }}
       open={open}
       drawerWidth={drawerWidth}
     >
@@ -92,12 +86,10 @@ export default function Sidebar(props: SidebarProps) {
         )}
       </Toolbar>
 
-      <SidebarList open={open} heading="Main" />
-      <SidebarList open={open} heading="Pinned Trees" />
-      <SidebarList open={open} heading="Recent Trees" />
+      <SidebarList heading="Main"></SidebarList>
 
       <Divider
-        sx={{ mx: open ? "20px" : "10px", bgcolor: "white", my: "10px" }}
+        sx={{ mx: open ? "20px" : "10px", bgcolor: "#403e3e", my: "10px" }}
       />
       <Box id="dark-mode-selection" sx={{ mx: "auto", mt: "10px" }}>
         <Typography display={open ? "block" : "none"}>Night Mode</Typography>

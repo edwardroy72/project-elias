@@ -8,7 +8,6 @@ import Sidebar from "./objects/navigation/Sidebar";
 import { NavigationSettings } from "../types";
 import "../styles/App.scss";
 
-
 export const NavigationContext = React.createContext<NavigationSettings>({
   drawerWidth: 240,
   open: false,
@@ -25,12 +24,11 @@ export default function App() {
     <ThemeProvider theme={ThemeOptions(darkMode)}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <NavigationContext.Provider value={{ drawerWidth, open, setOpen }}>
-          <Navbar />
-          <Sidebar setDarkMode={setDarkMode} />
-        </NavigationContext.Provider>
-
         <BrowserRouter>
+          <NavigationContext.Provider value={{ drawerWidth, open, setOpen }}>
+            <Navbar />
+            <Sidebar setDarkMode={setDarkMode} />
+          </NavigationContext.Provider>
           <AppPages />
         </BrowserRouter>
       </Box>
