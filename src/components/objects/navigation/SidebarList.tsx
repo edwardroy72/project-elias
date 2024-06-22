@@ -2,6 +2,8 @@ import { List, Divider, Typography } from "@mui/material";
 import React from "react";
 import SidebarListButton from "./SidebarListButton";
 import { NavigationContext } from "../../App";
+import HomeIcon from "@mui/icons-material/Home";
+import ParkIcon from "@mui/icons-material/Park";
 
 interface SidebarListProps {
   heading: string;
@@ -22,10 +24,15 @@ const SidebarList = (props: SidebarListProps) => {
       >
         {props.heading}
       </Typography>
-      <SidebarListButton title="Dashboard" url="/dashboard"></SidebarListButton>
       <SidebarListButton
-        title="About Page"
-        url="/about-page"
+        title="Dashboard"
+        url="/dashboard"
+        icon={HomeIcon}
+      ></SidebarListButton>
+      <SidebarListButton
+        title="Tree"
+        url="/tree"
+        icon={ParkIcon}
       ></SidebarListButton>
     </List>
   );

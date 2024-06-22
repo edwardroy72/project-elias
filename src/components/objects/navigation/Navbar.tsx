@@ -194,7 +194,15 @@ export default function Navbar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2, display: displaySettings(!open) }}
+            sx={{
+              mr: 2,
+              display: displaySettings(!open),
+              padding: '8px', // Adjust padding as needed
+              borderRadius: '12px', // Adjust border radius for desired shape
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.1)', // Example hover background color
+              },
+            }}
             onClick={toggleDrawer}
           >
             <MenuIcon />

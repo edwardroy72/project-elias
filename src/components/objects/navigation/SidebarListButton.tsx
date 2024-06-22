@@ -4,7 +4,6 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import MailIcon from "@mui/icons-material/Mail";
 import { useNavigate } from "react-router-dom";
 import { NavigationContext } from "../../App";
 import React from "react";
@@ -12,6 +11,7 @@ import React from "react";
 interface SidebarListButtonProps {
   url: string;
   title: string;
+  icon: React.ElementType;
 }
 
 const SidebarListButton = (props: SidebarListButtonProps) => {
@@ -31,19 +31,23 @@ const SidebarListButton = (props: SidebarListButtonProps) => {
     pr: open ? "10px" : "4px",
   };
 
+  const selectedStyle = {
+    color: isSelected ? "white" : "#999999",
+  };
+
   return (
     <ListItem sx={buttonStyle} key={props.title} disablePadding>
       <ListItemButton
         sx={{
           borderRadius: open ? "8px" : "16px",
           py: "0px",
-          mb: '4px',
+          mb: "4px",
           backgroundColor: isSelected ? "primary.light" : "none",
         }}
         onClick={() => navigate(props.url)}
       >
-        <ListItemIcon>{<MailIcon />}</ListItemIcon>
-        <ListItemText primary={props.title} />
+        <ListItemIcon>{<props.icon sx={selectedStyle} />}</ListItemIcon>
+        <ListItemText primary={props.title} sx={selectedStyle} />
       </ListItemButton>
     </ListItem>
   );

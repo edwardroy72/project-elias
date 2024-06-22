@@ -68,6 +68,7 @@ export default function Sidebar(props: SidebarProps) {
   return (
     <Drawer
       variant="permanent"
+
       open={open}
       drawerWidth={drawerWidth}
     >
