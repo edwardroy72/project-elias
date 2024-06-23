@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import React from "react";
 
 interface PageTemplateProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const PageTemplate = ({ children }: PageTemplateProps) => {

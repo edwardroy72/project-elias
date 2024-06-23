@@ -4,6 +4,7 @@ import LoginPage from "./LoginPage";
 import React from "react";
 import DashboardPage from "./DashboardPage";
 import Button from "@mui/material/Button";
+import TreePage from "./TreePage";
 
 const AppPages = () => {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ const AppPages = () => {
       <Routes>
         <Route index element={<DashboardPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/tree" element={<TreePage />} />
         <Route
           path="/login"
           element={
