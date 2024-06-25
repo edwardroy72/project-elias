@@ -1,18 +1,10 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import ListItemText from "@mui/material/ListItemText";
-import PinIcon from "../../../assets/pin-icon.svg";
 import Switch from "@mui/material/Switch";
 import { CSSObject, styled, Theme } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
@@ -66,12 +58,7 @@ export default function Sidebar(props: SidebarProps) {
   };
 
   return (
-    <Drawer
-      variant="permanent"
-
-      open={open}
-      drawerWidth={drawerWidth}
-    >
+    <Drawer variant="permanent" open={open} drawerWidth={drawerWidth}>
       <Toolbar
         sx={{
           display: "flex",

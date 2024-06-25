@@ -19,7 +19,12 @@ const SidebarList = (props: SidebarListProps) => {
         sx={{ mx: open ? "20px" : "10px", bgcolor: "#403e3e", my: "10px" }}
       />
       <Typography
-        sx={{ textAlign: "center", fontWeight: "bold", py: "4px" }}
+        sx={{
+          textAlign: "center",
+          fontWeight: "bold",
+          pb: "4px",
+          color: "#999999",
+        }}
         display={open ? "block" : "none"}
       >
         {props.heading}
