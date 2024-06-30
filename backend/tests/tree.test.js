@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { TreeNode } from "../backend/tree/TreeNode";
+import { TreeNode } from "../src/tree/TreeNode";
 import { CreateTree } from "./testHelpers";
 import { compareNodesForEquality } from "./testHelpers";
 

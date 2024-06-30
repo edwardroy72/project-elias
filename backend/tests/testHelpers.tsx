@@ -1,4 +1,4 @@
-import { TreeNode } from "../backend/tree/TreeNode";
+import { TreeNode } from "../src/tree/TreeNode";
 import { expect } from "vitest";
 
 export const CreateTree = () => {
